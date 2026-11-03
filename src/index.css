@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #d4af37;
+    --gold-light: #fef9ed;
+    --gold-dark: #997a15;
+    --wine: #3d121e;
+    --ink: #201a15;
+    --paper: #faf6f0;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-display {
+    font-family: 'Marcellus', 'Cormorant Garamond', serif;
+  }
+}
+
+/* Paper Deckle Border Texture */
+.deckle-card {
+  position: relative;
+  background-color: #fbf8f2;
+  box-shadow: 0 25px 60px -15px rgba(61, 18, 30, 0.12),
+              0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+.deckle-border {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  position: relative;
+}
+
+.deckle-border::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(212, 175, 55, 0.25);
+  pointer-events: none;
+}
+
+/* Shimmering Gold Text */
+.gold-text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #997a15 0%,
+    #e7c86a 25%,
+    #d4af37 50%,
+    #fef9ed 75%,
+    #997a15 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Diya glow animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(1.5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.97, 1.05) rotate(-0.5deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.04, 1.02) rotate(1deg);
+    opacity: 0.98;
+  }
+}
+
+.diya-flame-anim {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Floating lanterns ascending */
+@keyframes floatUpward {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-90vh) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.floating-lantern-particle {
+  position: absolute;
+  animation: floatUpward 7s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+/* Petal Fall Keyframes */
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -6vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--petal-opacity, 0.75);
+  }
+  90% {
+    opacity: var(--petal-opacity, 0.75);
+  }
+  100% {
+    transform: translate3d(var(--petal-drift, 40px), 106vh, 0) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  top: 0;
+  z-index: 30;
+  pointer-events: none;
+  animation: petal-fall var(--petal-duration, 14s) linear infinite;
+  animation-delay: var(--petal-delay, 0s);
+  will-change: transform, opacity;
+}
