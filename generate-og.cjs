@@ -4,6 +4,7 @@ const path = require('path');
 
 async function createOgImage() {
   const ghibliImagePath = path.join(__dirname, 'public', 'couple-ghibli.jpg');
+  const ekOnkarPath = path.join(__dirname, 'public', 'ek-onkar-gold.png');
   
   // Resize & crop couple artwork to fit the right arch (510x566)
   const coupleImage = await sharp(ghibliImagePath)
@@ -12,6 +13,13 @@ async function createOgImage() {
     .toBuffer();
 
   const coupleImageBase64 = coupleImage.toString('base64');
+
+  // Load Ek Onkar gold medallion (1st uploaded image)
+  const ekOnkarBuf = await sharp(ekOnkarPath)
+    .resize(76, 76, { fit: 'contain' })
+    .png()
+    .toBuffer();
+  const ekOnkarBase64 = ekOnkarBuf.toString('base64');
 
   const svgOverlay = Buffer.from(`
     <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
@@ -71,36 +79,36 @@ async function createOgImage() {
       <text x="895" y="566" font-family="Georgia, serif" font-size="20" fill="#fef3c7" font-weight="bold" text-anchor="middle" letter-spacing="3">GURJAS &amp; SHUBHPREET</text>
 
       <!-- Left Side Invitation Content -->
-      <g transform="translate(68, 60)">
-        <!-- Sacred Ek Onkar Badge -->
-        <circle cx="245" cy="32" r="30" fill="#fffdf8" stroke="url(#goldGrad)" stroke-width="2" filter="url(#shadow)"/>
-        <text x="245" y="44" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#b58b1a" text-anchor="middle">ੴ</text>
+      <g transform="translate(68, 55)">
+        <!-- Sacred Ek Onkar Image Badge -->
+        <circle cx="245" cy="38" r="40" fill="#fffdf8" stroke="url(#goldGrad)" stroke-width="2" filter="url(#shadow)"/>
+        <image href="data:image/png;base64,${ekOnkarBase64}" x="207" y="0" width="76" height="76" preserveAspectRatio="xMidYMid meet"/>
 
         <!-- Families Blessing -->
-        <text x="245" y="96" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" letter-spacing="5" fill="#7d634b" font-weight="600" text-anchor="middle">TOGETHER WITH OUR FAMILIES</text>
+        <text x="245" y="104" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" letter-spacing="5" fill="#7d634b" font-weight="600" text-anchor="middle">TOGETHER WITH OUR FAMILIES</text>
 
         <!-- Decorative Divider -->
-        <line x1="135" y1="116" x2="355" y2="116" stroke="url(#goldGrad)" stroke-width="1.5"/>
-        <text x="245" y="120" font-family="serif" font-size="14" fill="#b58b1a" text-anchor="middle">✦ ✦ ✦</text>
+        <line x1="135" y1="122" x2="355" y2="122" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <text x="245" y="126" font-family="serif" font-size="14" fill="#b58b1a" text-anchor="middle">✦ ✦ ✦</text>
 
         <!-- Couple Big Names -->
-        <text x="245" y="190" font-family="'Brush Script MT', 'Great Vibes', Georgia, cursive, serif" font-size="62" fill="#3d121e" font-weight="normal" text-anchor="middle">Gurjas &amp; Shubhpreet</text>
+        <text x="245" y="196" font-family="'Brush Script MT', 'Great Vibes', Georgia, cursive, serif" font-size="62" fill="#3d121e" font-weight="normal" text-anchor="middle">Gurjas &amp; Shubhpreet</text>
 
         <!-- Invitation Tagline -->
-        <text x="245" y="235" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#66503c" text-anchor="middle">invite you to celebrate their sacred wedding</text>
+        <text x="245" y="240" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#66503c" text-anchor="middle">invite you to celebrate their sacred wedding</text>
 
         <!-- Date Pill Badge -->
-        <rect x="45" y="270" width="400" height="54" rx="27" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="2" filter="url(#shadow)"/>
-        <text x="245" y="304" font-family="Georgia, serif" font-size="17" font-weight="bold" letter-spacing="3" fill="#3d121e" text-anchor="middle">SATURDAY · 12 DECEMBER 2026</text>
+        <rect x="45" y="275" width="400" height="54" rx="27" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="2" filter="url(#shadow)"/>
+        <text x="245" y="309" font-family="Georgia, serif" font-size="17" font-weight="bold" letter-spacing="3" fill="#3d121e" text-anchor="middle">SATURDAY · 12 DECEMBER 2026</text>
 
         <!-- Venue & Destination -->
-        <text x="245" y="362" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#3d121e" text-anchor="middle">96-F, SBS Nagar, Pakhowal Road</text>
-        <text x="245" y="388" font-family="'Segoe UI', sans-serif" font-size="13" letter-spacing="3" fill="#7a624d" font-weight="600" text-anchor="middle">LUDHIANA, PUNJAB</text>
+        <text x="245" y="366" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#3d121e" text-anchor="middle">96-F, SBS Nagar, Pakhowal Road</text>
+        <text x="245" y="392" font-family="'Segoe UI', sans-serif" font-size="13" letter-spacing="3" fill="#7a624d" font-weight="600" text-anchor="middle">LUDHIANA, PUNJAB</text>
 
         <!-- View Invitation CTA -->
-        <rect x="110" y="420" width="270" height="42" rx="21" fill="url(#wineGrad)" filter="url(#shadow)"/>
-        <rect x="112" y="422" width="266" height="38" rx="19" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.6"/>
-        <text x="245" y="446" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" letter-spacing="3" fill="#fbf5eb" text-anchor="middle">OPEN INVITATION →</text>
+        <rect x="110" y="424" width="270" height="42" rx="21" fill="url(#wineGrad)" filter="url(#shadow)"/>
+        <rect x="112" y="426" width="266" height="38" rx="19" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.6"/>
+        <text x="245" y="450" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" letter-spacing="3" fill="#fbf5eb" text-anchor="middle">OPEN INVITATION →</text>
       </g>
     </svg>
   `);
@@ -113,7 +121,7 @@ async function createOgImage() {
     })
     .toFile(path.join(__dirname, 'public', 'og-image.png'));
 
-  console.log('Successfully generated lossless compressed public/og-image.png');
+  console.log('Successfully generated lossless compressed public/og-image.png with updated Ek Onkar');
 }
 
 createOgImage().catch(console.error);

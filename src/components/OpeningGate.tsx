@@ -41,21 +41,21 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
             }}
           />
 
-          {/* Top Section: Sacred Ek Onkar Logo & Announcement */}
+          {/* Top Section: Sacred Gold Ek Onkar Image (1st Uploaded Image) */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative z-10 flex flex-col items-center pt-2"
           >
-            {/* Ek Onkar Emblem */}
+            {/* The 1st Uploaded Image: Ornate 3D Gold Ek Onkar Medallion */}
             <div className="relative mb-3 flex items-center justify-center">
-              <div className="absolute -inset-3 rounded-full bg-[#d4af37]/20 blur-md animate-pulse" />
-              <div className="relative flex h-14 w-14 items-center justify-center rounded-full border border-[#d4af37]/40 bg-[#fffdfa] shadow-[0_4px_20px_rgba(212,175,55,0.25)]">
-                <span className="font-serif text-3xl font-bold text-[#b58b1a] select-none">
-                  ੴ
-                </span>
-              </div>
+              <div className="absolute -inset-4 rounded-full bg-[#d4af37]/25 blur-xl animate-pulse" />
+              <img
+                src={weddingData.photos.ekOnkar}
+                alt="Sacred Ek Onkar"
+                className="relative h-24 w-24 rounded-full object-cover shadow-[0_8px_30px_rgba(212,175,55,0.4)] ring-2 ring-[#d4af37]/60"
+              />
             </div>
 
             <p className="font-display text-[11px] uppercase tracking-[0.38em] text-[#8e7a63]">
@@ -65,7 +65,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
               {weddingData.couple.groomShort} & {weddingData.couple.brideShort}
             </h1>
             <p className="mt-2 max-w-xs font-serif text-sm italic tracking-wide text-[#705e4d]">
-              Open with grace — A Sacred beginning awaits...
+              Open with grace — A Sacred begining awaits...
             </p>
           </motion.div>
 
@@ -116,7 +116,10 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
               </div>
 
               {/* Pulsing ring indicator */}
-              <div className="pointer-events-none absolute inset-0 -m-3 rounded-full border border-[#d4af37]/30 opacity-70 animate-ping" style={{ animationDuration: '3.5s' }} />
+              <div
+                className="pointer-events-none absolute inset-0 -m-3 rounded-full border border-[#d4af37]/30 opacity-70 animate-ping"
+                style={{ animationDuration: "3.5s" }}
+              />
             </motion.div>
 
             {/* Tap cue button */}
@@ -154,4 +157,3 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
     </AnimatePresence>
   );
 };
-

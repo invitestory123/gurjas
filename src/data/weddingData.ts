@@ -64,10 +64,10 @@ export const weddingData = {
     },
   ] as WeddingProgramItem[],
   photos: {
-    ghibliCouple: "/couple-ghibli.jpg",
+    ekOnkar: "/ek-onkar-gold.png",
+    ghibliCouple: "/ghibli-couple-turban-punjabi.jpg",
     familyPhoto: "/family-photo.jpg",
     couplePhoto: "/couple-photo-upright.jpg",
     bouquet: "/bouquet.png",
   },
 };
-

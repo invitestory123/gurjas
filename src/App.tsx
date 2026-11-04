@@ -3,7 +3,6 @@ import { OpeningGate } from "./components/OpeningGate";
 import { HeroCouple } from "./components/HeroCouple";
 import { SeashellVows } from "./components/SeashellVows";
 import { ToranInviteCard } from "./components/ToranInviteCard";
-import { ScratchCardDate } from "./components/ScratchCardDate";
 import { DayUnfolds } from "./components/DayUnfolds";
 import { CoupleGallery } from "./components/CoupleGallery";
 import { DiyaBlessing } from "./components/DiyaBlessing";
@@ -16,7 +15,7 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-[#faf7f2] font-sans text-[#221e1a] antialiased selection:bg-[#d4af37]/20 selection:text-[#3d121e]">
-      {/* 1) Ghibli Bouquet Opening Gate */}
+      {/* 1) Ghibli Bouquet Opening Gate with Gold Ek Onkar Image */}
       {!hasOpened && (
         <OpeningGate onOpen={() => setHasOpened(true)} />
       )}
@@ -30,19 +29,16 @@ export function App() {
           {/* Floating Audio Controller */}
           <MusicToggle />
 
-          {/* 2) Ghibli Couple Portrait & 1st Uploaded Family Photo */}
+          {/* 2 & 3) Ghibli Couple (Turban & Punjabi Suit holding childhood photos) & Couple Names & 1st Uploaded Family Photo */}
           <HeroCouple />
 
           {/* 3) Seashell Vows: Our Invitation & A Love written in tides */}
           <SeashellVows />
 
-          {/* 4) Toran Style Parents, Siblings & Formal Invitation Card */}
+          {/* 4) Toran Style Family Card: Parents & Siblings with Golden Theme (no venue/date) */}
           <ToranInviteCard />
 
-          {/* 5) Lantern Madurai Scratch Card to Reveal Dates */}
-          <ScratchCardDate />
-
-          {/* 6) Ivory Style 'The Day Unfolds' Timeline */}
+          {/* 5 & 6) Scratch Card embedded at top of Day Unfolds Timeline */}
           <DayUnfolds />
 
           {/* 7) Couple Gallery with 2nd Uploaded Couple Image */}
@@ -51,7 +47,7 @@ export function App() {
           {/* 8) Diya Ceremony: Press to give blessings & release lanterns */}
           <DiyaBlessing />
 
-          {/* 9) 'Forever Begins Now' Grand Finale */}
+          {/* 9) 'Forever Begins Now' Grand Finale in Seashell Style */}
           <ForeverClosing />
         </main>
       )}
@@ -60,4 +56,3 @@ export function App() {
 }
 
 export default App;
-
