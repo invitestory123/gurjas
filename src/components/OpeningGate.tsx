@@ -13,6 +13,8 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
   const handleOpen = () => {
     if (opening) return;
     setOpening(true);
+    // Dispatch music start event
+    window.dispatchEvent(new CustomEvent("start-wedding-music"));
     setTimeout(() => {
       onOpen();
     }, 1200);

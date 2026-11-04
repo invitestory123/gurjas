@@ -146,3 +146,25 @@
   animation-delay: var(--petal-delay, 0s);
   will-change: transform, opacity;
 }
+
+/* Audio Equalizer Soundbars */
+@keyframes soundbar {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+/* Tap Burst Petals */
+@keyframes petalBurstFade {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.15) translateY(20px);
+  }
+}

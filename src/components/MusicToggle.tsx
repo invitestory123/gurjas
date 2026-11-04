@@ -1,17 +1,46 @@
-import React, { useRef, useState } from "react";
-import { Music, VolumeX } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Music, VolumeX, Sparkles } from "lucide-react";
 
-export const MusicToggle: React.FC = () => {
+interface MusicToggleProps {
+  autoPlay?: boolean;
+}
+
+export const MusicToggle: React.FC<MusicToggleProps> = ({ autoPlay }) => {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.loop = true;
+
+    // Listen to global open invitation event
+    const handleStartMusic = () => {
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => setPlaying(false));
+    };
+
+    window.addEventListener("start-wedding-music", handleStartMusic);
+    if (autoPlay) {
+      handleStartMusic();
+    }
+
+    return () => {
+      window.removeEventListener("start-wedding-music", handleStartMusic);
+    };
+  }, [autoPlay]);
+
   const toggle = () => {
-    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+
     if (playing) {
-      audioRef.current.pause();
+      audio.pause();
       setPlaying(false);
     } else {
-      audioRef.current
+      audio
         .play()
         .then(() => setPlaying(true))
         .catch(() => setPlaying(false));
@@ -22,26 +51,38 @@ export const MusicToggle: React.FC = () => {
     <>
       <audio
         ref={audioRef}
-        src="https://media.invitestory.in/diya-haveli/r1.mp3"
+        src="/bg-music.mp3"
         loop
         preload="auto"
       />
       <button
         type="button"
         onClick={toggle}
-        aria-label={playing ? "Mute music" : "Play celebration music"}
-        className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-[#d4af37]/50 bg-[#fffdfa]/90 text-[#3d121e] shadow-[0_8px_25px_rgba(61,18,30,0.2)] backdrop-blur transition-all duration-300 hover:scale-110 active:scale-95"
+        aria-label={playing ? "Pause celebration music" : "Play celebration music"}
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 rounded-full border border-[#d4af37]/60 bg-[#fffdfa]/95 px-4 py-3 text-[#3d121e] shadow-[0_10px_30px_rgba(61,18,30,0.25)] backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
       >
         {playing ? (
-          <div className="relative flex items-center justify-center">
-            <Music size={18} className="text-[#b58b1a] animate-bounce" />
-            <span className="absolute -inset-1 rounded-full border border-[#d4af37]/40 animate-ping" />
-          </div>
+          <>
+            {/* Animated Equalizer soundbars */}
+            <div className="flex items-end gap-[3px] h-4">
+              <span className="w-1 bg-[#d4af37] rounded-full animate-[soundbar_0.8s_ease-in-out_infinite]" />
+              <span className="w-1 bg-[#b58b1a] rounded-full animate-[soundbar_1.2s_ease-in-out_infinite_0.2s]" />
+              <span className="w-1 bg-[#3d121e] rounded-full animate-[soundbar_0.9s_ease-in-out_infinite_0.4s]" />
+              <span className="w-1 bg-[#d4af37] rounded-full animate-[soundbar_1.1s_ease-in-out_infinite_0.1s]" />
+            </div>
+            <span className="font-display text-[11px] font-semibold tracking-wider text-[#541624]">
+              Playing Music
+            </span>
+          </>
         ) : (
-          <VolumeX size={18} className="text-[#8c7457]" />
+          <>
+            <VolumeX size={18} className="text-[#8c7457]" />
+            <span className="font-display text-[11px] font-semibold tracking-wider text-[#8c7457]">
+              Play Music
+            </span>
+          </>
         )}
       </button>
     </>
   );
 };
-

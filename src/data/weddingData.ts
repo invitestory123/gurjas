@@ -65,9 +65,9 @@ export const weddingData = {
   ] as WeddingProgramItem[],
   photos: {
     ekOnkar: "/ek-onkar-gold.png",
-    ghibliCouple: "/ghibli-couple-turban-punjabi.jpg",
+    ghibliCouple: "/ghibli-couple-transparent.png",
     familyPhoto: "/family-photo.jpg",
-    couplePhoto: "/couple-photo-upright.jpg",
+    couplePhoto: "/couple-photo-180.jpg",
     bouquet: "/bouquet.png",
   },
 };
