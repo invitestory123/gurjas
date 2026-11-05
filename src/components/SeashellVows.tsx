@@ -16,29 +16,18 @@ export const SeashellVows: React.FC = () => {
         transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto max-w-xl"
       >
-        {/* Overline: Our Invitation */}
-        <div className="flex items-center justify-center gap-3">
-          <div className="h-px w-12 bg-[#d4af37]/50" />
-          <span className="font-display text-[11px] uppercase tracking-[0.42em] text-[#8c7457]">
-            Our Invitation
-          </span>
-          <div className="h-px w-12 bg-[#d4af37]/50" />
-        </div>
-
-        {/* Title: A Love written in tides */}
-        <h2 className="mt-4 font-script text-5xl text-[#3d121e] sm:text-6xl">
-          A Love Written in Tides
+        {/* Title: Our Forever Begins */}
+        <h2 className="font-script text-5xl text-[#3d121e] sm:text-6xl">
+          Our Forever Begins
         </h2>
 
-        {/* Poetic description */}
-        <div className="relative mt-7 space-y-4 font-serif text-lg leading-relaxed text-[#5a4838] sm:text-xl">
+        {/* Story description */}
+        <div className="relative mt-7 space-y-5 font-serif text-base leading-relaxed text-[#5a4838] sm:text-lg">
           <p>
-            Like the quiet strength of the sea and the gentle grace of the shore,
-            two souls found solace, laughter, and an eternal home in each other.
+            Sometimes, all it takes is a nudge from a friend to change your life. What began with an unexpected hello blossomed into endless conversations, a beautiful friendship and eventually, love.
           </p>
           <p className="font-light italic text-[#78614d]">
-            With hearts brimming with gratitude and love, we invite you to be part
-            of our sacred beginning as we unite in prayers, tradition, and lifelong joy.
+            Now, with our families by our side and hearts full of joy, we invite you to our Roka Ceremony as we officially begin our journey to Forever.
           </p>
         </div>
 

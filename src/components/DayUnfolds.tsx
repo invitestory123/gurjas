@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, CheckCircle } from "lucide-react";
+import { Calendar, CheckCircle } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 export const DayUnfolds: React.FC = () => {
@@ -90,15 +90,15 @@ export const DayUnfolds: React.FC = () => {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Gurjas & Shubhpreet Wedding//EN",
+      "PRODID:-//Gurjas & Shubhpreet Roka Ceremony//EN",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       "BEGIN:VEVENT",
-      "UID:wedding-gurjas-shubhpreet-2026@invitestory.in",
+      "UID:roka-gurjas-shubhpreet-2026@invitestory.in",
       "DTSTAMP:20261103T120000Z",
       "DTSTART:20261212T120000Z",
       "DTEND:20261212T173000Z",
-      "SUMMARY:Gurjas & Shubhpreet - Wedding Celebration",
+      "SUMMARY:Gurjas & Shubhpreet - Roka Ceremony",
       "DESCRIPTION:Roka Ceremony, Ardaas, Fixing of Marriage Date and Dinner celebration at 96-F, SBS Nagar, Pakhowal Road, Ludhiana.",
       "LOCATION:96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013",
       "STATUS:CONFIRMED",
@@ -110,7 +110,7 @@ export const DayUnfolds: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "gurjas-shubhpreet-wedding.ics";
+    link.download = "gurjas-shubhpreet-roka-ceremony.ics";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -260,25 +260,16 @@ export const DayUnfolds: React.FC = () => {
             </div>
           </div>
 
-          {/* Action Buttons: Add to Calendar & Maps */}
+          {/* Action Button: Add to Calendar */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 pt-4 border-t border-[#1a1814]/10">
             <button
               type="button"
               onClick={downloadICS}
-              className="inline-flex items-center gap-2 rounded-full border border-[#1a1814]/15 bg-[#1a1814] px-5 py-2.5 text-xs font-medium uppercase tracking-wider text-[#f6f0e6] shadow-sm transition-all hover:bg-[#3d121e]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#1a1814]/15 bg-[#1a1814] px-6 py-2.5 text-xs font-medium uppercase tracking-wider text-[#f6f0e6] shadow-sm transition-all hover:bg-[#3d121e]"
             >
               <Calendar size={14} />
               <span>Add to Calendar</span>
             </button>
-            <a
-              href={weddingData.venue.mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#1a1814]/20 bg-white/90 px-5 py-2.5 text-xs font-medium uppercase tracking-wider text-[#3d2f21] shadow-sm transition-all hover:bg-[#f5ecdd]"
-            >
-              <MapPin size={14} className="text-[#b58b1a]" />
-              <span>Directions</span>
-            </a>
           </div>
         </motion.div>
       </div>

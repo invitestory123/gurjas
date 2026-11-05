@@ -27,7 +27,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
           key="gate-overlay"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 1.2, ease: [0.65, 0, 0.35, 1] } }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-between overflow-hidden px-6 py-10 text-center select-none"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden px-6 py-10 text-center select-none"
           style={{
             background: "radial-gradient(ellipse at center, #fffdf8 0%, #fbf5eb 50%, #f5ead6 100%)",
           }}
@@ -43,116 +43,89 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
             }}
           />
 
-          {/* Top Section: Sacred Gold Ek Onkar Image (1st Uploaded Image) */}
+          {/* Central Sacred Container */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative z-10 flex flex-col items-center pt-2"
+            initial={{ opacity: 0, scale: 0.92, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            className="relative z-10 flex flex-col items-center justify-center max-w-md w-full my-auto"
           >
-            {/* The 1st Uploaded Image: Ornate 3D Gold Ek Onkar Medallion */}
-            <div className="relative mb-3 flex items-center justify-center">
-              <div className="absolute -inset-4 rounded-full bg-[#d4af37]/25 blur-xl animate-pulse" />
-              <img
-                src={weddingData.photos.ekOnkar}
-                alt="Sacred Ek Onkar"
-                className="relative h-24 w-24 rounded-full object-cover shadow-[0_8px_30px_rgba(212,175,55,0.4)] ring-2 ring-[#d4af37]/60"
-              />
-            </div>
-
-            <p className="font-display text-[11px] uppercase tracking-[0.38em] text-[#8e7a63]">
+            {/* Top: With God's Grace */}
+            <motion.p
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.15 }}
+              className="font-display text-xs sm:text-sm uppercase tracking-[0.42em] text-[#8e7a63] mb-6"
+            >
               With God's Grace
-            </p>
-            <h1 className="mt-2 font-script text-4xl text-[#3d121e] sm:text-5xl">
-              {weddingData.couple.groomShort} & {weddingData.couple.brideShort}
-            </h1>
-            <p className="mt-2 max-w-xs font-serif text-sm italic tracking-wide text-[#705e4d]">
-              Open with grace — A Sacred begining awaits...
-            </p>
-          </motion.div>
+            </motion.p>
 
-          {/* Center Bouquet — Tap the bouquet to open invitation */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            className="relative z-10 my-auto flex flex-col items-center"
-          >
-            {/* Golden pulsating aura around the bouquet */}
-            <div className="absolute -inset-10 rounded-full bg-gradient-to-tr from-[#d4af37]/15 to-[#ffedd5]/40 blur-2xl" />
-
-            {/* Clickable bouquet container */}
+            {/* Middle: Ek Onkar PNG Enlarged with Sacred Glow */}
             <motion.div
               onClick={handleOpen}
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              className="group relative cursor-pointer"
+              whileTap={{ scale: 0.95 }}
+              className="group relative cursor-pointer flex items-center justify-center"
               role="button"
               tabIndex={0}
-              aria-label="Tap the bouquet to open the invitation"
+              aria-label="Tap to open the invitation"
             >
-              <div className="relative flex h-64 w-64 items-center justify-center sm:h-72 sm:w-72">
-                {/* Floating floral animation */}
-                <motion.img
-                  src={weddingData.photos.bouquet}
-                  alt="Wedding Flower Bouquet"
-                  className="h-full w-full object-contain drop-shadow-[0_20px_35px_rgba(61,18,30,0.18)] transition-transform duration-700 ease-out group-hover:rotate-1"
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+              {/* Outer Golden Pulsing Aura */}
+              <div className="absolute -inset-8 rounded-full bg-[#d4af37]/25 blur-2xl animate-pulse" />
+              <div
+                className="pointer-events-none absolute inset-0 -m-4 rounded-full border border-[#d4af37]/35 opacity-75 animate-ping"
+                style={{ animationDuration: "3.5s" }}
+              />
+
+              {/* The Enlarged Gold Ek Onkar Medallion */}
+              <div className="relative flex items-center justify-center">
+                <img
+                  src={weddingData.photos.ekOnkar}
+                  alt="Sacred Ek Onkar"
+                  className="relative h-36 w-36 sm:h-44 sm:w-44 rounded-full object-cover shadow-[0_12px_40px_rgba(212,175,55,0.45)] ring-4 ring-[#d4af37]/70 transition-transform duration-500 ease-out group-hover:scale-105"
                 />
 
                 {/* Sparkling accent */}
                 <motion.div
-                  className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-[#d4af37] shadow-sm backdrop-blur"
+                  className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#d4af37] shadow-md backdrop-blur"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
                 >
                   <Sparkles size={16} />
                 </motion.div>
               </div>
-
-              {/* Pulsing ring indicator */}
-              <div
-                className="pointer-events-none absolute inset-0 -m-3 rounded-full border border-[#d4af37]/30 opacity-70 animate-ping"
-                style={{ animationDuration: "3.5s" }}
-              />
             </motion.div>
 
-            {/* Tap cue button */}
-            <motion.button
-              type="button"
-              onClick={handleOpen}
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#d4af37]/50 bg-gradient-to-r from-[#3d121e] to-[#591e2f] px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#faf5eb] shadow-[0_12px_30px_rgba(61,18,30,0.25)] transition-all hover:shadow-[0_16px_40px_rgba(61,18,30,0.35)]"
+            {/* Below Ek Onkar: Text starting with open with grace */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="mt-7 max-w-xs sm:max-w-sm font-serif text-base sm:text-lg italic tracking-wide text-[#705e4d]"
             >
-              <span>Open Invitation</span>
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d4af37]/30 text-white">
-                →
-              </span>
-            </motion.button>
-            <p className="mt-3 font-display text-[10px] uppercase tracking-[0.24em] text-[#9c8975]">
-              Tap the bouquet to enter
-            </p>
-          </motion.div>
+              Open with grace — A Sacred beginning awaits...
+            </motion.p>
 
-          {/* Footer date notice */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="relative z-10 pb-2 text-center"
-          >
-            <div className="h-px w-20 mx-auto mb-2 bg-[#d4af37]/30" />
-            <p className="font-serif text-xs tracking-widest text-[#7a6755] uppercase">
-              {weddingData.date.displayDate} · Ludhiana, Punjab
-            </p>
+            {/* Beneath that: Tap to open */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.45 }}
+              className="mt-6"
+            >
+              <motion.button
+                type="button"
+                onClick={handleOpen}
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                className="inline-flex items-center gap-3 rounded-full border border-[#d4af37]/50 bg-gradient-to-r from-[#3d121e] to-[#591e2f] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.28em] text-[#faf5eb] shadow-[0_12px_30px_rgba(61,18,30,0.25)] transition-all hover:shadow-[0_16px_40px_rgba(61,18,30,0.35)]"
+              >
+                <span>Tap to open</span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d4af37]/30 text-white text-xs">
+                  →
+                </span>
+              </motion.button>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

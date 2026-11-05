@@ -26,13 +26,13 @@ export const weddingData = {
   },
   family: {
     bride: {
-      father: "S. Trilochan Singh",
-      mother: "Smt. Manjit Kaur",
+      father: "S. Trilochen Singh",
+      mother: "S. Manjit Kaur",
       siblings: ["Mohpreet Kaur", "Ajeet Singh Layal"],
     },
     groom: {
       father: "S. Kamaljeet Singh",
-      mother: "Smt. Nirmal Kaur",
+      mother: "S. Nirmal Kaur",
       siblings: ["Prabhjot Kaur"],
     },
   },

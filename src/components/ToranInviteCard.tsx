@@ -45,9 +45,6 @@ export const ToranInviteCard: React.FC = () => {
                 <br />
                 <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.groom.mother}</span>
               </p>
-              <p className="mt-1 text-[11px] tracking-wider text-[#7d6550]">
-                Brother of {weddingData.family.groom.siblings.join(", ")}
-              </p>
             </div>
 
             {/* DAUGHTER OF */}
@@ -60,9 +57,6 @@ export const ToranInviteCard: React.FC = () => {
                 <br />
                 <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.bride.mother}</span>
               </p>
-              <p className="mt-1 text-[11px] tracking-wider text-[#7d6550]">
-                Sister of {weddingData.family.bride.siblings.join(" & ")}
-              </p>
             </div>
 
             {/* • • • (Three Dots like Image 3) */}
@@ -72,9 +66,9 @@ export const ToranInviteCard: React.FC = () => {
               <span>&bull;</span>
             </div>
 
-            {/* request the pleasure of your company at the wedding of */}
+            {/* request the pleasure of your company at the rokha ceremony of */}
             <p className="mx-auto max-w-sm font-serif text-lg italic leading-relaxed text-[#4d3827] sm:text-xl">
-              request the pleasure of your company at the wedding of
+              request the pleasure of your company at the rokha ceremony of
             </p>
 
             {/* BOLD NAMES IN TORAN STYLE (Image 3) */}

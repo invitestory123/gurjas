@@ -105,7 +105,7 @@ export const HeroCouple: React.FC = () => {
         />
       </motion.div>
 
-      {/* BOTTOM: DATE, TAGLINE & LETTER-BY-LETTER NAMES */}
+      {/* BOTTOM: TAGLINE & LETTER-BY-LETTER NAMES */}
       <motion.div
         initial={{ opacity: 0, y: 22 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -113,14 +113,9 @@ export const HeroCouple: React.FC = () => {
         transition={{ duration: 1, delay: 0.45, ease: EASE }}
         className="relative z-10 mx-auto mt-6 flex flex-col items-center text-center"
       >
-        {/* Date text */}
-        <p className="font-display text-xs uppercase tracking-[0.34em] text-[#856e58]">
-          Saturday, December 12th, 2026
-        </p>
-
         {/* Tagline */}
-        <p className="mt-2.5 font-serif text-lg italic text-[#544131] sm:text-xl">
-          “Together since childhood. Forever begins now.”
+        <p className="font-serif text-lg italic text-[#544131] sm:text-xl">
+          “Forever begins now”
         </p>
 
         {/* Calligraphy Names revealed letter-by-letter */}
