@@ -86,35 +86,15 @@ export const DayUnfolds: React.FC = () => {
     isDrawing.current = false;
   };
 
-  const downloadICS = () => {
-    const icsContent = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//Gurjas & Shubhpreet Roka Ceremony//EN",
-      "CALSCALE:GREGORIAN",
-      "METHOD:PUBLISH",
-      "BEGIN:VEVENT",
-      "UID:roka-gurjas-shubhpreet-2026@invitestory.in",
-      "DTSTAMP:20261103T120000Z",
-      "DTSTART:20261212T120000Z",
-      "DTEND:20261212T173000Z",
-      "SUMMARY:Gurjas & Shubhpreet - Roka Ceremony",
-      "DESCRIPTION:Roka Ceremony, Ardaas, Fixing of Marriage Date and Dinner celebration at 96-F, SBS Nagar, Pakhowal Road, Ludhiana.",
-      "LOCATION:96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013",
-      "STATUS:CONFIRMED",
-      "END:VEVENT",
-      "END:VCALENDAR",
-    ].join("\r\n");
-
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "gurjas-shubhpreet-roka-ceremony.ics";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+  const openGoogleCalendar = () => {
+    const title = encodeURIComponent("Gurjas & Shubhpreet - Roka Ceremony");
+    const details = encodeURIComponent(
+      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Guest Arrival at 6:00 PM, Ardaas at 6:30 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at Singh Residence, Ludhiana."
+    );
+    const location = encodeURIComponent("96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013");
+    const dates = "20261212T123000Z/20261212T173000Z";
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+    window.open(googleCalendarUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -128,13 +108,13 @@ export const DayUnfolds: React.FC = () => {
         className="mb-10 flex flex-col items-center gap-2 text-center"
       >
         <span className="font-display text-[11px] uppercase tracking-[0.42em] text-[#8e775f]">
-          Save The Sacred Date
+          Save The Date
         </span>
         <h2 className="font-serif text-3xl font-medium text-[#3d121e] sm:text-4xl">
           A Gentle ceremony of prayer and celebration
         </h2>
         <p className="font-serif text-sm italic text-[#6e5845]">
-          A sacred union sealed with eternal devotion
+          A joyful celebration sealed with eternal love
         </p>
         <div className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37]/45 to-transparent" />
       </motion.div>
@@ -260,15 +240,15 @@ export const DayUnfolds: React.FC = () => {
             </div>
           </div>
 
-          {/* Action Button: Add to Calendar */}
+          {/* Action Button: Add to Google Calendar */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 pt-4 border-t border-[#1a1814]/10">
             <button
               type="button"
-              onClick={downloadICS}
+              onClick={openGoogleCalendar}
               className="inline-flex items-center gap-2 rounded-full border border-[#1a1814]/15 bg-[#1a1814] px-6 py-2.5 text-xs font-medium uppercase tracking-wider text-[#f6f0e6] shadow-sm transition-all hover:bg-[#3d121e]"
             >
               <Calendar size={14} />
-              <span>Add to Calendar</span>
+              <span>Add to Google Calendar</span>
             </button>
           </div>
         </motion.div>

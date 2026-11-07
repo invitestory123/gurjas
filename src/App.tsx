@@ -3,11 +3,12 @@ import { useScroll, useSpring, motion } from "framer-motion";
 import { OpeningGate } from "./components/OpeningGate";
 import { HeroCouple } from "./components/HeroCouple";
 import { SeashellVows } from "./components/SeashellVows";
+import { FamilyBlessing } from "./components/FamilyBlessing";
 import { ToranInviteCard } from "./components/ToranInviteCard";
 import { DayUnfolds } from "./components/DayUnfolds";
 import { SeashellVenue } from "./components/SeashellVenue";
-import { CoupleGallery } from "./components/CoupleGallery";
 import { DiyaBlessing } from "./components/DiyaBlessing";
+import { RsvpSection } from "./components/RsvpSection";
 import { ForeverClosing } from "./components/ForeverClosing";
 import { Petals } from "./components/Petals";
 import { PetalTapBurst } from "./components/PetalTapBurst";
@@ -28,12 +29,12 @@ export function App() {
         />
       )}
 
-      {/* 1) Ghibli Bouquet Opening Gate with Gold Ek Onkar Image */}
+      {/* 1) Sacred Ek Onkar Opening Gate (Enlarged logo, tap to open) */}
       {!hasOpened && (
         <OpeningGate onOpen={() => setHasOpened(true)} />
       )}
 
-      {/* Main Wedding Invitation Experience */}
+      {/* Main Roka Invitation Experience */}
       {hasOpened && (
         <main className="relative mx-auto max-w-2xl bg-[#faf7f2] shadow-2xl transition-opacity duration-1000">
           {/* Interactive Tap Petal Burst */}
@@ -42,31 +43,34 @@ export function App() {
           {/* Drifting Petals Atmospheric Overlay */}
           <Petals count={18} />
 
-          {/* Floating Audio Controller (Loops YouTube short audio) */}
+          {/* Floating Audio Controller */}
           <MusicToggle autoPlay={true} />
 
-          {/* 2 & 3) Ghibli Couple (Turban & Punjabi Suit holding childhood photos, transparent PNG, parallax, letter-by-letter names) & 1st Uploaded Family Photo */}
+          {/* 1) Ghibli Couple Illustration & Save The Date */}
           <HeroCouple />
 
-          {/* 3) Seashell Vows: Our Invitation & A Love written in tides */}
+          {/* 2) Our Forever Begins (Placed above Elders Blessed section) */}
           <SeashellVows />
 
-          {/* 4) Toran Style Family Card: Parents & Siblings with Golden Theme (no venue/date) */}
+          {/* 3) Blessed by Love & Elders Family Photo */}
+          <FamilyBlessing />
+
+          {/* 4) Toran Style Family Card: Parents (Mother first, then Father) */}
           <ToranInviteCard />
 
-          {/* 5 & 6) Scratch Card embedded at top of Day Unfolds Timeline */}
+          {/* 5) Scratch Card & Day Unfolds Timeline with Google Calendar redirect */}
           <DayUnfolds />
 
-          {/* 3) Dedicated Seashell Venue Section with Google Maps Link & Map Card */}
+          {/* 6) Dedicated Celebration Venue with Illuminated Residence Photo */}
           <SeashellVenue />
 
-          {/* 7) Couple Gallery with 2nd Uploaded Couple Image (Rotated 180°) */}
-          <CoupleGallery />
-
-          {/* 8) Diya Ceremony: Press to give blessings & release lanterns */}
+          {/* 7) Diya Ceremony: Terracotta Lamp & Floating Seashell Sky Lanterns */}
           <DiyaBlessing />
 
-          {/* 9) 'Forever Begins Now' Grand Finale in Seashell Style */}
+          {/* 8) WhatsApp RSVP Section */}
+          <RsvpSection />
+
+          {/* 9) Sacred Closing Grand Finale */}
           <ForeverClosing />
         </main>
       )}

@@ -20,7 +20,7 @@ export const weddingData = {
     iso: "2026-12-12T17:30:00+05:30",
   },
   venue: {
-    name: "Layal & Singh Residence",
+    name: "Singh Residence",
     address: "96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=96-F+SBS+Nagar+Pakhowal+Road+Ludhiana+Punjab+141013",
   },
@@ -38,29 +38,24 @@ export const weddingData = {
   },
   program: [
     {
-      time: "05:30 PM",
+      time: "6:00 PM",
       name: "Guest Arrival",
-      description: "Warm welcome with traditional refreshments & blessings",
+      description: "Warm welcome with traditional refreshments",
     },
     {
-      time: "06:15 PM",
+      time: "6:30 PM",
       name: "Ardaas",
-      description: "A sacred prayer to invoke universal blessings of Waheguru Ji",
+      description: "A heartfelt prayer invoking universal blessings",
     },
     {
-      time: "07:00 PM",
+      time: "7:00 PM",
       name: "Roka Ceremony",
       description: "The auspicious bonding and union of both families",
     },
     {
-      time: "07:45 PM",
-      name: "Fixing of Marriage Date",
-      description: "Announcing the sacred Anand Karaj date with shared joy",
-    },
-    {
-      time: "08:30 PM",
-      name: "Dinner & Celebration",
-      description: "An evening of lavish Punjabi delicacies, music & togetherness",
+      time: "",
+      name: "Followed by Celebration & Dinner",
+      description: "An evening of lavish delicacies, music & togetherness",
     },
   ] as WeddingProgramItem[],
   photos: {
@@ -69,5 +64,7 @@ export const weddingData = {
     familyPhoto: "/family-photo.jpg",
     couplePhoto: "/couple-photo-180.jpg",
     bouquet: "/bouquet.png",
+    venue: "/venue-night.jpg",
+    diyaLamp: "/diya-lamp.png",
   },
 };

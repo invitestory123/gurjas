@@ -51,31 +51,31 @@ export const SeashellVenue: React.FC = () => {
           <div className="mt-3 h-px w-20 bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent" />
         </div>
 
-        {/* Seashell Map Card */}
+        {/* Seashell Map & Venue Card */}
         <div className="overflow-hidden rounded-[2.2rem] border border-[#d4af37]/35 bg-[#fffdfa] shadow-[0_20px_50px_rgba(61,18,30,0.08)]">
-          {/* Map Image / Header */}
-          <div className="relative h-48 w-full overflow-hidden bg-[#faf4ea]">
+          {/* Venue Image (2nd Uploaded Image: Illuminated Venue Residence) */}
+          <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-[#faf4ea]">
             <img
-              src="/venue-map.jpg"
-              alt="Illustrated map of Ludhiana, Punjab"
+              src="/venue-night.jpg"
+              alt="Singh Residence Illuminated Venue"
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
             />
             {/* Subtle Gradient Veil */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fffdfa] via-transparent to-transparent opacity-90" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fffdfa] via-transparent to-transparent opacity-80" />
             
             {/* Pulsing Map Pin Emblem */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-              <span className="absolute -inset-3 rounded-full bg-[#d4af37]/30 animate-ping" />
-              <div className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#d4af37]/50 bg-[#3d121e] text-white shadow-lg">
-                <MapPin size={20} className="text-[#fde047]" />
+            <div className="absolute right-4 bottom-4 flex items-center justify-center">
+              <span className="absolute -inset-2 rounded-full bg-[#d4af37]/40 animate-ping" />
+              <div className="relative flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/60 bg-[#3d121e]/90 text-white shadow-lg backdrop-blur">
+                <MapPin size={18} className="text-[#fde047]" />
               </div>
             </div>
           </div>
 
           {/* Venue Information */}
-          <div className="px-6 pb-8 pt-4 text-center sm:px-8">
-            <span className="font-display text-[10px] uppercase tracking-[0.34em] text-[#917a63]">
-              Celebration Residence
+          <div className="px-6 pb-8 pt-5 text-center sm:px-8">
+            <span className="font-display text-[11px] uppercase tracking-[0.38em] text-[#917a63]">
+              Celebration
             </span>
             <h3 className="mt-1 font-serif text-2xl font-bold text-[#3d121e] sm:text-3xl">
               {weddingData.venue.name}

@@ -41,16 +41,12 @@ export const ForeverClosing: React.FC = () => {
           />
         </div>
 
-        {/* Closing Title from Requirement 9 */}
-        <p className="font-display text-[11px] uppercase tracking-[0.44em] text-[#8f7457]">
+        {/* Closing Title */}
+        <p className="font-display text-[12px] uppercase tracking-[0.44em] text-[#8f7457]">
           An Eternal Union
         </p>
 
-        <h2 className="mt-3 font-script text-6xl text-[#3d121e] sm:text-7xl">
-          Forever Begins Now
-        </h2>
-
-        <div className="mx-auto my-6 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37]/60 to-transparent" />
+        <div className="mx-auto my-5 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37]/60 to-transparent" />
 
         <p className="font-serif text-2xl font-medium tracking-wide text-[#591626]">
           {weddingData.couple.groom} &bull; {weddingData.couple.bride}

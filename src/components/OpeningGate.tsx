@@ -82,28 +82,28 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
                 <img
                   src={weddingData.photos.ekOnkar}
                   alt="Sacred Ek Onkar"
-                  className="relative h-36 w-36 sm:h-44 sm:w-44 rounded-full object-cover shadow-[0_12px_40px_rgba(212,175,55,0.45)] ring-4 ring-[#d4af37]/70 transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="relative h-48 w-48 sm:h-56 sm:w-56 rounded-full object-cover shadow-[0_16px_50px_rgba(212,175,55,0.5)] ring-4 ring-[#d4af37]/75 transition-transform duration-500 ease-out group-hover:scale-105"
                 />
 
                 {/* Sparkling accent */}
                 <motion.div
-                  className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#d4af37] shadow-md backdrop-blur"
+                  className="absolute -top-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#d4af37] shadow-md backdrop-blur"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
                 >
-                  <Sparkles size={16} />
+                  <Sparkles size={18} />
                 </motion.div>
               </div>
             </motion.div>
 
-            {/* Below Ek Onkar: Text starting with open with grace */}
+            {/* Below Ek Onkar: Text */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
               className="mt-7 max-w-xs sm:max-w-sm font-serif text-base sm:text-lg italic tracking-wide text-[#705e4d]"
             >
-              Open with grace — A Sacred beginning awaits...
+              A Sacred beginning awaits...
             </motion.p>
 
             {/* Beneath that: Tap to open */}
