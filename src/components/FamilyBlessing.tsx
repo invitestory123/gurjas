@@ -43,7 +43,7 @@ export const FamilyBlessing: React.FC = () => {
 
           <div className="px-3 py-4 text-center">
             <p className="font-script text-3xl text-[#3d121e]">
-              The Layal &amp; Singh Families
+              The Singh &amp; Layal Families
             </p>
             <p className="mt-1 font-display text-[10px] uppercase tracking-[0.24em] text-[#8a735c]">
               Warmth &bull; Togetherness &bull; Joy

@@ -63,7 +63,7 @@ export const ForeverClosing: React.FC = () => {
           </p>
           <div className="mx-auto my-3 h-px w-16 bg-[#d4af37]/30" />
           <p className="font-display text-[11px] uppercase tracking-[0.28em] text-[#856c56]">
-            &mdash; Layal &amp; Singh Families
+            &mdash; Singh &amp; Layal Families
           </p>
         </div>
 

@@ -107,7 +107,7 @@ export const RsvpSection: React.FC = () => {
           </form>
 
           <p className="mt-4 font-display text-[10px] uppercase tracking-[0.22em] text-[#9c8774]">
-            Instant reply &bull; Layal &amp; Singh Families
+            Instant reply &bull; Singh &amp; Layal Families
           </p>
         </div>
       </motion.div>
