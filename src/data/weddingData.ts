@@ -66,5 +66,7 @@ export const weddingData = {
     bouquet: "/bouquet.png",
     venue: "/venue-night.jpg",
     diyaLamp: "/diya-lamp.png",
+    brideChildhood: "/bride-childhood.jpg",
+    groomChildhood: "/groom-childhood.jpg",
   },
 };

@@ -114,3 +114,4 @@ export const RsvpSection: React.FC = () => {
     </section>
   );
 };
+
