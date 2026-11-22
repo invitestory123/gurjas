@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Heart } from "lucide-react";
+import { Heart, ChevronDown } from "lucide-react";
 
 interface ReleasedLantern {
   id: number;
@@ -143,10 +143,6 @@ export const DiyaBlessing: React.FC = () => {
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 mx-auto max-w-lg"
       >
-        <span className="font-display text-[11px] uppercase tracking-[0.42em] text-[#917961]">
-          Ritual of Blessings
-        </span>
-
         <h2 className="mt-3 font-script text-5xl text-[#3d121e] sm:text-6xl">
           Light the Lamp of Blessings
         </h2>
@@ -256,27 +252,32 @@ export const DiyaBlessing: React.FC = () => {
           </button>
         </div>
 
-        {/* Counter & Status */}
+        {/* Status Message when lit */}
         <div className="mt-8 flex flex-col items-center gap-1.5">
-          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-[#806852]">
-            <Sparkles size={14} className="text-[#b58b1a]" />
-            <span>{blessingCount} Blessings Sent</span>
-            <Sparkles size={14} className="text-[#b58b1a]" />
-          </div>
           <AnimatePresence>
             {lit && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#d4af37]/40 bg-[#fffcf5] px-4 py-1.5 text-xs text-[#785b3b] shadow-sm"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#d4af37]/40 bg-[#fffcf5] px-5 py-2 text-xs font-serif text-[#785b3b] shadow-sm"
               >
-                <Heart size={13} className="fill-[#e11d48] text-[#e11d48]" />
+                <Heart size={14} className="fill-[#e11d48] text-[#e11d48]" />
                 <span>Thank you for sending your prayers &amp; love!</span>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
+
+        {/* Gentle Bouncing Scroll Cue */}
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="mt-8 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.34em] text-[#a18c77]"
+        >
+          <span>Scroll Down</span>
+          <ChevronDown size={14} className="text-[#b58b1a]" />
+        </motion.div>
       </motion.div>
     </section>
   );

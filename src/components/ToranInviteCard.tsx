@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 export const ToranInviteCard: React.FC = () => {
@@ -28,38 +29,32 @@ export const ToranInviteCard: React.FC = () => {
               Together With Their Families
             </p>
 
-            {/* Floral Motif (like in Image 3) */}
+            {/* Floral Motif */}
             <div className="mx-auto my-5 flex items-center justify-center gap-3 text-[#b58b1a]">
               <span className="h-px w-10 bg-[#deb87a]/60" />
               <span className="text-base select-none">❧</span>
               <span className="h-px w-10 bg-[#deb87a]/60" />
             </div>
 
-            {/* SON OF */}
+            {/* GROOM'S PARENTS (Mother first, then Father - without 'Son of') */}
             <div className="mt-6">
-              <span className="font-sans text-[10px] font-semibold tracking-[0.34em] text-[#9c7953] uppercase">
-                Son of
-              </span>
-              <p className="mt-1.5 font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
+              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
                 {weddingData.family.groom.mother}
                 <br />
                 <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.groom.father}</span>
               </p>
             </div>
 
-            {/* DAUGHTER OF */}
+            {/* BRIDE'S PARENTS (Mother first, then Father - without 'Daughter of') */}
             <div className="mt-8">
-              <span className="font-sans text-[10px] font-semibold tracking-[0.34em] text-[#9c7953] uppercase">
-                Daughter of
-              </span>
-              <p className="mt-1.5 font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
+              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
                 {weddingData.family.bride.mother}
                 <br />
                 <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.bride.father}</span>
               </p>
             </div>
 
-            {/* • • • (Three Dots like Image 3) */}
+            {/* • • • (Three Dots) */}
             <div className="my-8 flex items-center justify-center gap-2 text-base text-[#deb87a]">
               <span>&bull;</span>
               <span>&bull;</span>
@@ -71,7 +66,7 @@ export const ToranInviteCard: React.FC = () => {
               request the pleasure of your company at the roka ceremony of
             </p>
 
-            {/* BOLD NAMES IN TORAN STYLE (Image 3) */}
+            {/* BOLD NAMES IN TORAN STYLE */}
             <div className="mt-7 space-y-1">
               <h2 className="font-serif text-4xl font-extrabold uppercase tracking-tight text-[#5c1324] sm:text-5xl">
                 {weddingData.couple.groomShort}
@@ -83,10 +78,18 @@ export const ToranInviteCard: React.FC = () => {
                 {weddingData.couple.brideShort}
               </h2>
             </div>
-
-            {/* Note: In accordance with prompt: "in that dont need of venue snd date", venue and date are omitted here */}
           </div>
         </div>
+
+        {/* Gentle Bouncing Scroll Cue */}
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="mt-8 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.34em] text-[#a18c77]"
+        >
+          <span>Scroll Down</span>
+          <ChevronDown size={14} className="text-[#b58b1a]" />
+        </motion.div>
       </motion.div>
     </section>
   );

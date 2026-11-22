@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronDown } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export const FamilyBlessing: React.FC = () => {
   return (
-    <section className="relative px-4 pb-20 pt-8 sm:px-6 overflow-hidden">
+    <section className="relative px-4 pb-20 pt-4 sm:px-6 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,10 +27,6 @@ export const FamilyBlessing: React.FC = () => {
           Blessed by Love &amp; Elders
         </h2>
 
-        <p className="mx-auto mt-2 max-w-md font-serif text-sm leading-relaxed text-[#6b5847]">
-          With the divine grace of Almighty God and the joyous blessings of our parents and siblings, two families celebrate as one.
-        </p>
-
         {/* Family Photo Card */}
         <div className="relative mx-auto mt-7 overflow-hidden rounded-[2.2rem] border-2 border-[#d4af37]/35 bg-[#fffaf2] p-3.5 shadow-[0_20px_50px_rgba(61,18,30,0.12)]">
           <div className="relative overflow-hidden rounded-[1.8rem]">
@@ -43,13 +39,20 @@ export const FamilyBlessing: React.FC = () => {
 
           <div className="px-3 py-4 text-center">
             <p className="font-script text-3xl text-[#3d121e]">
-              The Singh &amp; Layal Families
-            </p>
-            <p className="mt-1 font-display text-[10px] uppercase tracking-[0.24em] text-[#8a735c]">
-              Warmth &bull; Togetherness &bull; Joy
+              The Hora &amp; Layal Families
             </p>
           </div>
         </div>
+
+        {/* Gentle Bouncing Scroll Cue */}
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="mt-8 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.34em] text-[#a18c77]"
+        >
+          <span>Scroll Down</span>
+          <ChevronDown size={14} className="text-[#b58b1a]" />
+        </motion.div>
       </motion.div>
     </section>
   );

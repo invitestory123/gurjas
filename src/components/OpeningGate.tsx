@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 interface OpeningGateProps {
@@ -27,7 +26,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
           key="gate-overlay"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 1.2, ease: [0.65, 0, 0.35, 1] } }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden px-6 py-10 text-center select-none"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden px-6 py-10 text-center select-none font-serif"
           style={{
             background: "radial-gradient(ellipse at center, #fffdf8 0%, #fbf5eb 50%, #f5ead6 100%)",
           }}
@@ -55,7 +54,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15 }}
-              className="font-display text-xs sm:text-sm uppercase tracking-[0.42em] text-[#8e7a63] mb-6"
+              className="font-serif text-sm sm:text-base uppercase tracking-[0.42em] text-[#8e7a63] mb-6"
             >
               With God's Grace
             </motion.p>
@@ -77,33 +76,24 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
                 style={{ animationDuration: "3.5s" }}
               />
 
-              {/* The Enlarged Gold Ek Onkar Medallion */}
+              {/* The Enlarged Gold Ek Onkar Medallion (Without star) */}
               <div className="relative flex items-center justify-center">
                 <img
                   src={weddingData.photos.ekOnkar}
                   alt="Sacred Ek Onkar"
                   className="relative h-48 w-48 sm:h-56 sm:w-56 rounded-full object-cover shadow-[0_16px_50px_rgba(212,175,55,0.5)] ring-4 ring-[#d4af37]/75 transition-transform duration-500 ease-out group-hover:scale-105"
                 />
-
-                {/* Sparkling accent */}
-                <motion.div
-                  className="absolute -top-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#d4af37] shadow-md backdrop-blur"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                >
-                  <Sparkles size={18} />
-                </motion.div>
               </div>
             </motion.div>
 
-            {/* Below Ek Onkar: Text */}
+            {/* Below Ek Onkar: Text (Without awaits) */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="mt-7 max-w-xs sm:max-w-sm font-serif text-base sm:text-lg italic tracking-wide text-[#705e4d]"
+              className="mt-7 max-w-xs sm:max-w-sm font-serif text-lg sm:text-xl italic tracking-wide text-[#705e4d]"
             >
-              A Sacred beginning awaits...
+              A Sacred beginning
             </motion.p>
 
             {/* Beneath that: Tap to open */}
@@ -118,7 +108,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
                 onClick={handleOpen}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-3 rounded-full border border-[#d4af37]/50 bg-gradient-to-r from-[#3d121e] to-[#591e2f] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.28em] text-[#faf5eb] shadow-[0_12px_30px_rgba(61,18,30,0.25)] transition-all hover:shadow-[0_16px_40px_rgba(61,18,30,0.35)]"
+                className="inline-flex items-center gap-3 rounded-full border border-[#d4af37]/50 bg-gradient-to-r from-[#3d121e] to-[#591e2f] px-8 py-3.5 font-serif text-sm font-medium uppercase tracking-[0.28em] text-[#faf5eb] shadow-[0_12px_30px_rgba(61,18,30,0.25)] transition-all hover:shadow-[0_16px_40px_rgba(61,18,30,0.35)]"
               >
                 <span>Tap to open</span>
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d4af37]/30 text-white text-xs">

@@ -60,34 +60,6 @@ export const HeroCouple: React.FC = () => {
         className="pointer-events-none absolute left-1/2 top-[32%] h-[70vmin] w-[90vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(245,212,126,0.28),transparent)] blur-3xl"
       />
 
-      {/* TOP: SAVE THE DATE (Exact Ghibli Styling) */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: EASE }}
-        className="relative z-10 mx-auto flex flex-col items-center text-center"
-      >
-        <motion.span
-          initial={{ opacity: 0, letterSpacing: "0.2em" }}
-          whileInView={{ opacity: 1, letterSpacing: "0.45em" }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: EASE }}
-          className="font-display text-[12px] font-medium uppercase text-[#8c7457]"
-        >
-          Save The Date
-        </motion.span>
-        
-        {/* Animated Hairline */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3, ease: EASE }}
-          className="mt-3 h-px w-28 bg-gradient-to-r from-transparent via-[#d4af37]/70 to-transparent"
-        />
-      </motion.div>
-
       {/* CENTER: GHIBLI COUPLE ILLUSTRATION (NO WHITE BACKGROUND, NO BOX) */}
       <motion.div
         style={{ x: couplePX, y: couplePY }}
@@ -95,7 +67,7 @@ export const HeroCouple: React.FC = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.3, delay: 0.2, ease: EASE }}
-        className="relative z-10 mx-auto mt-6 flex max-w-md items-center justify-center"
+        className="relative z-10 mx-auto mt-2 flex max-w-md items-center justify-center"
       >
         {/* Transparent PNG couple seamlessly blending into page background */}
         <img
@@ -127,17 +99,13 @@ export const HeroCouple: React.FC = () => {
           <ScriptName text={weddingData.couple.brideShort} delay={0.9} />
         </h1>
 
-        <p className="mt-1 font-display text-[12px] uppercase tracking-[0.26em] text-[#8f7760]">
-          {weddingData.couple.groom} &bull; {weddingData.couple.bride}
-        </p>
-
         {/* Gentle Bouncing Scroll Cue */}
         <motion.div
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          className="mt-7 flex flex-col items-center gap-1 text-[10px] uppercase tracking-[0.34em] text-[#a18c77]"
+          className="mt-8 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.34em] text-[#a18c77]"
         >
-          <span>Scroll</span>
+          <span>Scroll Down</span>
           <ChevronDown size={14} className="text-[#b58b1a]" />
         </motion.div>
       </motion.div>

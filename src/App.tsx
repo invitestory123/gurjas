@@ -6,7 +6,6 @@ import { SeashellVows } from "./components/SeashellVows";
 import { FamilyBlessing } from "./components/FamilyBlessing";
 import { ToranInviteCard } from "./components/ToranInviteCard";
 import { DayUnfolds } from "./components/DayUnfolds";
-import { SeashellVenue } from "./components/SeashellVenue";
 import { DiyaBlessing } from "./components/DiyaBlessing";
 import { RsvpSection } from "./components/RsvpSection";
 import { ForeverClosing } from "./components/ForeverClosing";
@@ -58,13 +57,10 @@ export function App() {
           {/* 4) Toran Style Family Card: Parents (Mother first, then Father) */}
           <ToranInviteCard />
 
-          {/* 5) Scratch Card & Day Unfolds Timeline with Google Calendar redirect */}
+          {/* 5) Scratch Card, Evening Unfolds Timeline & Merged Venue */}
           <DayUnfolds />
 
-          {/* 6) Dedicated Celebration Venue with Illuminated Residence Photo */}
-          <SeashellVenue />
-
-          {/* 7) Diya Ceremony: Terracotta Lamp & Floating Seashell Sky Lanterns */}
+          {/* 6) Diya Ceremony: Terracotta Lamp & Floating Seashell Sky Lanterns */}
           <DiyaBlessing />
 
           {/* 8) WhatsApp RSVP Section */}

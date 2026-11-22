@@ -20,42 +20,49 @@ export const weddingData = {
     iso: "2026-12-12T17:30:00+05:30",
   },
   venue: {
-    name: "Singh Residence",
+    name: "Hora Residence",
     address: "96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=96-F+SBS+Nagar+Pakhowal+Road+Ludhiana+Punjab+141013",
   },
   family: {
     bride: {
       father: "S. Trilochen Singh",
-      mother: "S. Manjit Kaur",
+      mother: "Sdn. Manjit Kaur",
       siblings: ["Mohpreet Kaur", "Ajeet Singh Layal"],
     },
     groom: {
       father: "S. Kamaljeet Singh",
-      mother: "S. Nirmal Kaur",
+      mother: "Sdn. Nirmal Kaur",
       siblings: ["Prabhjot Kaur"],
+    },
+  },
+  contacts: {
+    groom: {
+      name: "Gurjas",
+      phone: "+91 9706047369",
+      waNumber: "919706047369",
+    },
+    bride: {
+      name: "Shubhpreet",
+      phone: "+91 8077828992",
+      waNumber: "918077828992",
     },
   },
   program: [
     {
       time: "6:00 PM",
-      name: "Guest Arrival",
-      description: "Warm welcome with traditional refreshments",
-    },
-    {
-      time: "6:30 PM",
       name: "Ardaas",
-      description: "A heartfelt prayer invoking universal blessings",
+      description: "Seeking the blessings of Waheguruji",
     },
     {
       time: "7:00 PM",
       name: "Roka Ceremony",
-      description: "The auspicious bonding and union of both families",
+      description: "A promise for togetherness forever",
     },
     {
-      time: "",
+      time: "8:00 PM onwards",
       name: "Followed by Celebration & Dinner",
-      description: "An evening of lavish delicacies, music & togetherness",
+      description: "An evening of music & togetherness",
     },
   ] as WeddingProgramItem[],
   photos: {

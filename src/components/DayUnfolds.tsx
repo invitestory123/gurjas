@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle } from "lucide-react";
+import { Calendar, CheckCircle, Navigation, MapPin, ChevronDown } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 export const DayUnfolds: React.FC = () => {
@@ -89,7 +89,7 @@ export const DayUnfolds: React.FC = () => {
   const openGoogleCalendar = () => {
     const title = encodeURIComponent("Gurjas & Shubhpreet - Roka Ceremony");
     const details = encodeURIComponent(
-      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Guest Arrival at 6:00 PM, Ardaas at 6:30 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at Singh Residence, Ludhiana."
+      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Ardaas at 6:00 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at 8:00 PM onwards at Hora Residence, Ludhiana."
     );
     const location = encodeURIComponent("96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013");
     const dates = "20261212T123000Z/20261212T173000Z";
@@ -119,7 +119,7 @@ export const DayUnfolds: React.FC = () => {
         <div className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37]/45 to-transparent" />
       </motion.div>
 
-      {/* Main Combined Card: Scratch Card at Top + The Day Unfolds below */}
+      {/* Main Combined Card: Scratch Card at Top + Evening Unfolds + Merged Venue */}
       <div className="relative mx-auto max-w-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -131,7 +131,7 @@ export const DayUnfolds: React.FC = () => {
           {/* Subtle Inner Ring */}
           <div className="pointer-events-none absolute inset-3 rounded-[2.1rem] ring-1 ring-[rgba(26,24,20,0.06)]" />
 
-          {/* TOP PART: Interactive Scratch Card (Replaces the static date header as requested) */}
+          {/* TOP PART: Interactive Scratch Card */}
           <div className="relative mx-auto max-w-sm text-center">
             {/* The Scratch Box */}
             <div className="relative mx-auto h-44 w-full overflow-hidden rounded-[1.8rem] border-2 border-[#d4af37]/40 bg-[#fffdf8] shadow-[0_15px_35px_rgba(61,18,30,0.08)]">
@@ -182,10 +182,10 @@ export const DayUnfolds: React.FC = () => {
 
           <div className="mx-auto my-9 h-px w-24 bg-[#1a1814]/15" />
 
-          {/* BOTTOM PART: Exact Ivory "The Day Unfolds" Timeline */}
+          {/* TIMELINE PART: "The evening unfolds" */}
           <div className="relative mx-auto max-w-sm">
             <p className="mb-8 text-center text-[11px] uppercase tracking-[0.4em] text-[#8a7a68]">
-              The day unfolds
+              The evening unfolds
             </p>
 
             <div className="relative pl-2">
@@ -251,6 +251,65 @@ export const DayUnfolds: React.FC = () => {
               <span>Add to Google Calendar</span>
             </button>
           </div>
+
+          {/* MERGED VENUE SECTION (Item 16 & 17: Merged with Timeline, Copy address removed) */}
+          <div className="mt-12 pt-8 border-t border-[#1a1814]/15">
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#d4af37]/35 bg-[#fffdfa] shadow-[0_15px_35px_rgba(61,18,30,0.06)]">
+              {/* Venue Night Image */}
+              <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-[#faf4ea]">
+                <img
+                  src={weddingData.photos.venue}
+                  alt="Hora Residence Venue"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fffdfa] via-transparent to-transparent opacity-85" />
+                
+                {/* Map Pin Emblem */}
+                <div className="absolute right-4 bottom-4 flex items-center justify-center">
+                  <span className="absolute -inset-2 rounded-full bg-[#d4af37]/40 animate-ping" />
+                  <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#d4af37]/60 bg-[#3d121e]/90 text-white shadow-lg backdrop-blur">
+                    <MapPin size={16} className="text-[#fde047]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Venue Info & Directions Button Only */}
+              <div className="px-6 pb-7 pt-4 text-center sm:px-8">
+                <span className="font-display text-[10px] uppercase tracking-[0.38em] text-[#917a63]">
+                  Celebration
+                </span>
+                <h3 className="mt-1 font-serif text-2xl font-bold text-[#3d121e] sm:text-3xl">
+                  {weddingData.venue.name}
+                </h3>
+                <p className="mx-auto mt-2 max-w-sm font-serif text-sm leading-relaxed text-[#6b5644]">
+                  {weddingData.venue.address}
+                </p>
+
+                {/* Only Open in Google Maps button (Copy Address removed as requested) */}
+                <div className="mt-5 flex justify-center">
+                  <a
+                    href={weddingData.venue.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[46px] items-center justify-center gap-2.5 rounded-full border border-[#d4af37]/40 bg-gradient-to-r from-[#3d121e] to-[#5a1b2d] px-7 py-2.5 text-xs font-medium uppercase tracking-[0.2em] text-[#fbf6ec] shadow-[0_8px_20px_rgba(61,18,30,0.2)] transition-all hover:scale-105 active:scale-95"
+                  >
+                    <Navigation size={14} className="text-[#fde047]" />
+                    <span>Open in Google Maps</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Gentle Bouncing Scroll Cue */}
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="mt-8 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.34em] text-[#a18c77]"
+        >
+          <span>Scroll Down</span>
+          <ChevronDown size={14} className="text-[#b58b1a]" />
         </motion.div>
       </div>
     </section>
