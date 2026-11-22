@@ -89,7 +89,7 @@ export const DayUnfolds: React.FC = () => {
   const openGoogleCalendar = () => {
     const title = encodeURIComponent("Gurjas & Shubhpreet - Roka Ceremony");
     const details = encodeURIComponent(
-      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Ardaas at 6:00 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at 8:00 PM onwards at Hora Residence, Ludhiana."
+      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Ardaas at 6:00 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at 8:00 PM onwards at Singh Residency, Ludhiana."
     );
     const location = encodeURIComponent("96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013");
     const dates = "20261212T123000Z/20261212T173000Z";
@@ -259,7 +259,7 @@ export const DayUnfolds: React.FC = () => {
               <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-[#faf4ea]">
                 <img
                   src={weddingData.photos.venue}
-                  alt="Hora Residence Venue"
+                  alt="Singh Residency Venue"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fffdfa] via-transparent to-transparent opacity-85" />

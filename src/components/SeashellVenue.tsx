@@ -57,7 +57,7 @@ export const SeashellVenue: React.FC = () => {
           <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-[#faf4ea]">
             <img
               src="/venue-night.jpg"
-              alt="Singh Residence Illuminated Venue"
+              alt="Singh Residency Illuminated Venue"
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
             />
             {/* Subtle Gradient Veil */}
