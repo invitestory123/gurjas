@@ -20,7 +20,7 @@ export const weddingData = {
     iso: "2026-12-12T17:30:00+05:30",
   },
   venue: {
-    name: "Singh Residency",
+    name: "Singh Residence",
     address: "96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=96-F+SBS+Nagar+Pakhowal+Road+Ludhiana+Punjab+141013",
   },

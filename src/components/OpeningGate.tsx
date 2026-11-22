@@ -93,7 +93,7 @@ export const OpeningGate: React.FC<OpeningGateProps> = ({ onOpen }) => {
               transition={{ duration: 0.9, delay: 0.3 }}
               className="mt-7 max-w-xs sm:max-w-sm font-serif text-lg sm:text-xl italic tracking-wide text-[#705e4d]"
             >
-              A Sacred beginning
+              A sacred beginning...
             </motion.p>
 
             {/* Beneath that: Tap to open */}

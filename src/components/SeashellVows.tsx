@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Heart } from "lucide-react";
 
 export const SeashellVows: React.FC = () => {
   return (
@@ -15,6 +15,11 @@ export const SeashellVows: React.FC = () => {
         transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto max-w-xl"
       >
+        {/* Title: Forever begins now in calligraphy font */}
+        <h2 className="mb-7 font-script text-5xl text-[#3d121e] sm:text-6xl">
+          Forever begins now
+        </h2>
+
         {/* Story description - both paragraphs unified in same font */}
         <div className="relative space-y-6 font-serif text-lg leading-relaxed text-[#5a4838] sm:text-xl">
           <p>
@@ -23,6 +28,15 @@ export const SeashellVows: React.FC = () => {
           <p>
             With our families by our side and hearts full of joy, we invite you to our Roka Ceremony as we begin our journey to Forever.
           </p>
+        </div>
+
+        {/* Decorative Golden Heart and Lines */}
+        <div className="mt-8 flex items-center justify-center gap-3 text-[#d4af37]">
+          <span className="h-px w-16 bg-[#d4af37]/40" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d4af37]/40 bg-[#fffdf8] shadow-sm">
+            <Heart size={18} className="fill-[#d4af37] text-[#d4af37]" />
+          </div>
+          <span className="h-px w-16 bg-[#d4af37]/40" />
         </div>
 
         {/* Gentle Bouncing Scroll Cue */}

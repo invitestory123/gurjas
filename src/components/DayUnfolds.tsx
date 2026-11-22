@@ -43,7 +43,7 @@ export const DayUnfolds: React.FC = () => {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = "bold 11px Marcellus, serif";
-    ctx.fillText("SCRATCH TO REVEAL OUR DATE", rect.width / 2, rect.height / 2 - 10);
+    ctx.fillText("SCRATCH THIS", rect.width / 2, rect.height / 2 - 10);
 
     ctx.font = "22px serif";
     ctx.fillText("❋ ੴ ❋", rect.width / 2, rect.height / 2 + 18);
@@ -89,7 +89,7 @@ export const DayUnfolds: React.FC = () => {
   const openGoogleCalendar = () => {
     const title = encodeURIComponent("Gurjas & Shubhpreet - Roka Ceremony");
     const details = encodeURIComponent(
-      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Ardaas at 6:00 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at 8:00 PM onwards at Singh Residency, Ludhiana."
+      "Roka Ceremony of Gurjas Singh & Shubhpreet Kaur Layal. Ardaas at 6:00 PM, Roka Ceremony at 7:00 PM followed by Celebration & Dinner at 8:00 PM onwards at Singh Residence, Ludhiana."
     );
     const location = encodeURIComponent("96-F, SBS Nagar, Pakhowal Road, Ludhiana, Punjab - 141013");
     const dates = "20261212T123000Z/20261212T173000Z";
@@ -111,7 +111,7 @@ export const DayUnfolds: React.FC = () => {
           Save The Date
         </span>
         <h2 className="font-serif text-3xl font-medium text-[#3d121e] sm:text-4xl">
-          A Gentle ceremony of prayer and celebration
+          A gentle ceremony of gratitude and celebration
         </h2>
         <p className="font-serif text-sm italic text-[#6e5845]">
           A joyful celebration sealed with eternal love
@@ -175,7 +175,7 @@ export const DayUnfolds: React.FC = () => {
                   We cannot wait to celebrate with you ♡
                 </span>
               ) : (
-                "Scratch above to uncover the date"
+                "Scratch this to uncover the date"
               )}
             </p>
           </div>
@@ -259,7 +259,7 @@ export const DayUnfolds: React.FC = () => {
               <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-[#faf4ea]">
                 <img
                   src={weddingData.photos.venue}
-                  alt="Singh Residency Venue"
+                  alt="Singh Residence Venue"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fffdfa] via-transparent to-transparent opacity-85" />

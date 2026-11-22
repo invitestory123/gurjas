@@ -36,21 +36,32 @@ export const ToranInviteCard: React.FC = () => {
               <span className="h-px w-10 bg-[#deb87a]/60" />
             </div>
 
-            {/* GROOM'S PARENTS (Mother first, then Father - without 'Son of') */}
+            {/* GROOM'S PARENTS (Mother first, then Father - Enlarged) */}
             <div className="mt-6">
-              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
+              <p className="font-serif text-3xl font-semibold tracking-wide text-[#5c1324] sm:text-4xl">
                 {weddingData.family.groom.mother}
                 <br />
-                <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.groom.father}</span>
+                <span className="text-2xl sm:text-3xl font-medium">&amp; {weddingData.family.groom.father}</span>
               </p>
             </div>
 
-            {/* BRIDE'S PARENTS (Mother first, then Father - without 'Daughter of') */}
-            <div className="mt-8">
-              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl">
+            {/* Small Flower Separator between parents */}
+            <div className="my-5 flex items-center justify-center gap-3">
+              <span className="h-px w-10 bg-[#deb87a]/60" />
+              <img
+                src="/floral-spray.png"
+                alt="flower decoration"
+                className="h-7 w-7 object-contain opacity-80"
+              />
+              <span className="h-px w-10 bg-[#deb87a]/60" />
+            </div>
+
+            {/* BRIDE'S PARENTS (Mother first, then Father - Enlarged) */}
+            <div className="mt-5">
+              <p className="font-serif text-3xl font-semibold tracking-wide text-[#5c1324] sm:text-4xl">
                 {weddingData.family.bride.mother}
                 <br />
-                <span className="text-xl sm:text-2xl font-medium">&amp; {weddingData.family.bride.father}</span>
+                <span className="text-2xl sm:text-3xl font-medium">&amp; {weddingData.family.bride.father}</span>
               </p>
             </div>
 
@@ -62,19 +73,19 @@ export const ToranInviteCard: React.FC = () => {
             </div>
 
             {/* request the pleasure of your company at the roka ceremony of */}
-            <p className="mx-auto max-w-sm font-serif text-lg italic leading-relaxed text-[#4d3827] sm:text-xl">
+            <p className="mx-auto max-w-sm font-serif text-base italic leading-relaxed text-[#4d3827] sm:text-lg">
               request the pleasure of your company at the roka ceremony of
             </p>
 
-            {/* BOLD NAMES IN TORAN STYLE */}
-            <div className="mt-7 space-y-1">
-              <h2 className="font-serif text-4xl font-extrabold uppercase tracking-tight text-[#5c1324] sm:text-5xl">
+            {/* GROOM & BRIDE NAMES - MUCH SMALLER TO GIVE IMPORTANCE TO PARENTS */}
+            <div className="mt-6 space-y-1">
+              <h2 className="font-serif text-xl font-bold uppercase tracking-widest text-[#5c1324] sm:text-2xl">
                 {weddingData.couple.groomShort}
               </h2>
-              <span className="block font-script text-3xl lowercase text-[#b58b1a] sm:text-4xl">
+              <span className="block font-script text-xl lowercase text-[#b58b1a] sm:text-2xl">
                 and
               </span>
-              <h2 className="font-serif text-4xl font-extrabold uppercase tracking-tight text-[#5c1324] sm:text-5xl">
+              <h2 className="font-serif text-xl font-bold uppercase tracking-widest text-[#5c1324] sm:text-2xl">
                 {weddingData.couple.brideShort}
               </h2>
             </div>

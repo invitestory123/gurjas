@@ -77,7 +77,7 @@ export const HeroCouple: React.FC = () => {
         />
       </motion.div>
 
-      {/* BOTTOM: TAGLINE & LETTER-BY-LETTER NAMES */}
+      {/* BOTTOM: LETTER-BY-LETTER NAMES */}
       <motion.div
         initial={{ opacity: 0, y: 22 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,13 +85,8 @@ export const HeroCouple: React.FC = () => {
         transition={{ duration: 1, delay: 0.45, ease: EASE }}
         className="relative z-10 mx-auto mt-6 flex flex-col items-center text-center"
       >
-        {/* Tagline */}
-        <p className="font-serif text-lg italic text-[#544131] sm:text-xl">
-          “Forever begins now”
-        </p>
-
         {/* Calligraphy Names revealed letter-by-letter */}
-        <h1 className="mt-3 font-script text-6xl text-[#3d121e] sm:text-7xl leading-tight">
+        <h1 className="mt-2 font-script text-6xl text-[#3d121e] sm:text-7xl leading-tight">
           <ScriptName text={weddingData.couple.groomShort} delay={0.6} />
           <span className="mx-3 inline-block font-serif text-3xl font-light italic text-[#d4af37] sm:text-4xl">
             &amp;
