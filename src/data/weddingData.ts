@@ -62,7 +62,7 @@ export const weddingData = {
     {
       time: "8:00 PM onwards",
       name: "Followed by Celebration & Dinner",
-      description: "An evening of music & togetherness",
+      description: "An Evening of music and harmony",
     },
   ] as WeddingProgramItem[],
   photos: {

@@ -8,7 +8,6 @@ import { ToranInviteCard } from "./components/ToranInviteCard";
 import { DayUnfolds } from "./components/DayUnfolds";
 import { DiyaBlessing } from "./components/DiyaBlessing";
 import { RsvpSection } from "./components/RsvpSection";
-import { ForeverClosing } from "./components/ForeverClosing";
 import { Petals } from "./components/Petals";
 import { PetalTapBurst } from "./components/PetalTapBurst";
 import { MusicToggle } from "./components/MusicToggle";
@@ -65,9 +64,6 @@ export function App() {
 
           {/* 8) WhatsApp RSVP Section */}
           <RsvpSection />
-
-          {/* 9) Sacred Closing Grand Finale */}
-          <ForeverClosing />
         </main>
       )}
     </div>

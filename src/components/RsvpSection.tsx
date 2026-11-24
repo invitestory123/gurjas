@@ -22,7 +22,7 @@ export const RsvpSection: React.FC = () => {
   };
 
   return (
-    <section className="relative px-4 py-20 sm:px-6">
+    <section className="relative px-4 pt-16 pb-28 sm:px-6 sm:pb-36">
       {/* Background Soft Glow */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-72 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.12),transparent_70%)] blur-2xl" />
 

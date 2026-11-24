@@ -36,12 +36,12 @@ export const ToranInviteCard: React.FC = () => {
               <span className="h-px w-10 bg-[#deb87a]/60" />
             </div>
 
-            {/* GROOM'S PARENTS (Mother first, then Father - Enlarged) */}
+            {/* GROOM'S PARENTS (Mother first, then Father - Same font size) */}
             <div className="mt-6">
-              <p className="font-serif text-3xl font-semibold tracking-wide text-[#5c1324] sm:text-4xl">
+              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl leading-relaxed">
                 {weddingData.family.groom.mother}
                 <br />
-                <span className="text-2xl sm:text-3xl font-medium">&amp; {weddingData.family.groom.father}</span>
+                &amp; {weddingData.family.groom.father}
               </p>
             </div>
 
@@ -56,12 +56,12 @@ export const ToranInviteCard: React.FC = () => {
               <span className="h-px w-10 bg-[#deb87a]/60" />
             </div>
 
-            {/* BRIDE'S PARENTS (Mother first, then Father - Enlarged) */}
+            {/* BRIDE'S PARENTS (Mother first, then Father - Same font size) */}
             <div className="mt-5">
-              <p className="font-serif text-3xl font-semibold tracking-wide text-[#5c1324] sm:text-4xl">
+              <p className="font-serif text-2xl font-semibold tracking-wide text-[#5c1324] sm:text-3xl leading-relaxed">
                 {weddingData.family.bride.mother}
                 <br />
-                <span className="text-2xl sm:text-3xl font-medium">&amp; {weddingData.family.bride.father}</span>
+                &amp; {weddingData.family.bride.father}
               </p>
             </div>
 

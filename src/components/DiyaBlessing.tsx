@@ -147,10 +147,18 @@ export const DiyaBlessing: React.FC = () => {
           Light the Lamp of Blessings
         </h2>
 
-        <p className="mx-auto mt-2 max-w-md font-serif text-sm leading-relaxed text-[#665241]">
-          {lit
-            ? "The sacred flame is shining bright. Your heartfelt prayers have reached the couple."
-            : "Press and hold the ceremonial diya to ignite the flame and release floating lanterns into the night sky."}
+        <p className="mx-auto mt-3 max-w-md font-serif text-sm sm:text-base leading-relaxed text-[#665241]">
+          {lit ? (
+            "The sacred flame is shining bright. Your heartfelt prayers have reached the couple."
+          ) : (
+            <>
+              Press and hold the ceremonial Diya
+              <br />
+              To ignite the flame and release
+              <br />
+              Floating lanterns into the night sky
+            </>
+          )}
         </p>
 
         {/* The Diya Interactive Target */}

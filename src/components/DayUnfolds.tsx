@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle, Navigation, MapPin, ChevronDown } from "lucide-react";
+import { Calendar, Heart, Navigation, MapPin, ChevronDown } from "lucide-react";
 import { weddingData } from "../data/weddingData";
 
 export const DayUnfolds: React.FC = () => {
@@ -111,12 +111,8 @@ export const DayUnfolds: React.FC = () => {
           Save The Date
         </span>
         <h2 className="font-serif text-3xl font-medium text-[#3d121e] sm:text-4xl">
-          A gentle ceremony of gratitude and celebration
+          A Joyous ceremony of gratitude and celebration
         </h2>
-        <p className="font-serif text-sm italic text-[#6e5845]">
-          A joyful celebration sealed with eternal love
-        </p>
-        <div className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37]/45 to-transparent" />
       </motion.div>
 
       {/* Main Combined Card: Scratch Card at Top + Evening Unfolds + Merged Venue */}
@@ -170,9 +166,10 @@ export const DayUnfolds: React.FC = () => {
             {/* Hint message below scratch box */}
             <p className="mt-3 font-display text-[11px] uppercase tracking-wider text-[#947d66]">
               {revealed ? (
-                <span className="inline-flex items-center gap-1.5 text-[#b58b1a] font-semibold">
-                  <CheckCircle size={13} />
-                  We cannot wait to celebrate with you ♡
+                <span className="inline-flex items-center gap-2 text-[#b58b1a] font-semibold">
+                  <Heart size={12} className="fill-[#d4af37] text-[#d4af37]" />
+                  <span>We cannot wait to celebrate with you</span>
+                  <Heart size={12} className="fill-[#d4af37] text-[#d4af37]" />
                 </span>
               ) : (
                 "Scratch this to uncover the date"

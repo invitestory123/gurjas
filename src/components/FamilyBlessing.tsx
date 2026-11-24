@@ -18,13 +18,13 @@ export const FamilyBlessing: React.FC = () => {
         <div className="mb-4 flex items-center justify-center gap-2 text-[#d4af37]">
           <Sparkles size={16} />
           <span className="font-display text-[11px] uppercase tracking-[0.34em] text-[#8a7259]">
-            United With Family
+            Two Families, One Beautiful Beginning
           </span>
           <Sparkles size={16} />
         </div>
 
         <h2 className="font-serif text-3xl font-medium text-[#3d121e] sm:text-4xl">
-          Blessed by Love &amp; Elders
+          Blessed by love of elders
         </h2>
 
         {/* Family Photo Card */}
