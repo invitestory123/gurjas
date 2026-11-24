@@ -7,7 +7,7 @@ export const RsvpSection: React.FC = () => {
   const [guestName, setGuestName] = useState("");
   const [attending, setAttending] = useState<"yes" | "regret">("yes");
 
-  const handleWhatsAppRsvp = (recipient: "gurjas" | "shubhpreet") => {
+  const handleWhatsAppRsvp = () => {
     const statusText =
       attending === "yes"
         ? "Delighted to accept and celebrate with you!"
@@ -16,7 +16,7 @@ export const RsvpSection: React.FC = () => {
 
     const text = `Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh! Warm congratulations to Gurjas & Shubhpreet on their Roka Ceremony! RSVP${namePart}: ${statusText} (12th December 2026)`;
 
-    const phone = recipient === "gurjas" ? "919706047369" : "918077828992";
+    const phone = "919706047369";
     const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -96,24 +96,15 @@ export const RsvpSection: React.FC = () => {
               </button>
             </div>
 
-            {/* Two WhatsApp Buttons (Item 20: Gurjas & Shubhpreet) */}
-            <div className="mt-3 flex flex-col sm:flex-row gap-3 justify-center">
+            {/* Single WhatsApp RSVP Button (Gurjas) */}
+            <div className="mt-4 flex justify-center">
               <button
                 type="button"
-                onClick={() => handleWhatsAppRsvp("gurjas")}
-                className="flex-1 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-gradient-to-r from-[#128C7E] to-[#25D366] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-[0_8px_20px_rgba(37,211,102,0.25)] transition-all hover:scale-[1.03] active:scale-[0.98]"
+                onClick={handleWhatsAppRsvp}
+                className="inline-flex min-h-[48px] w-full sm:w-auto items-center justify-center gap-2.5 rounded-full border border-[#25D366]/40 bg-gradient-to-r from-[#128C7E] to-[#25D366] px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_8px_22px_rgba(37,211,102,0.28)] transition-all hover:scale-[1.03] active:scale-[0.98]"
               >
-                <MessageCircle size={16} className="fill-white text-transparent shrink-0" />
-                <span>Gurjas (+91 9706047369)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleWhatsAppRsvp("shubhpreet")}
-                className="flex-1 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-gradient-to-r from-[#25D366] to-[#128C7E] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-[0_8px_20px_rgba(37,211,102,0.25)] transition-all hover:scale-[1.03] active:scale-[0.98]"
-              >
-                <MessageCircle size={16} className="fill-white text-transparent shrink-0" />
-                <span>Shubhpreet (+91 8077828992)</span>
+                <MessageCircle size={17} className="fill-white text-transparent shrink-0" />
+                <span>RSVP to Gurjas</span>
               </button>
             </div>
           </div>
